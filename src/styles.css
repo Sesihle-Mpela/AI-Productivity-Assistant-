@@ -149,3 +149,46 @@
   background-clip: text;
   color: transparent;
 }
+
+/* Accessibility "Listen" control: high-visibility popping colour flicker. */
+@keyframes listen-pop {
+  0% {
+    background-color: oklch(0.72 0.2 30);
+    color: oklch(0.16 0.02 30);
+    box-shadow: 0 0 0 0 oklch(0.72 0.2 30 / 55%);
+  }
+  25% {
+    background-color: oklch(0.85 0.19 95);
+    color: oklch(0.2 0.03 95);
+    box-shadow: 0 0 18px 2px oklch(0.85 0.19 95 / 60%);
+  }
+  50% {
+    background-color: oklch(0.78 0.17 165);
+    color: oklch(0.17 0.03 165);
+    box-shadow: 0 0 22px 4px oklch(0.78 0.17 165 / 60%);
+  }
+  75% {
+    background-color: oklch(0.68 0.19 300);
+    color: oklch(0.98 0.01 300);
+    box-shadow: 0 0 18px 2px oklch(0.68 0.19 300 / 60%);
+  }
+  100% {
+    background-color: oklch(0.72 0.2 30);
+    color: oklch(0.16 0.02 30);
+    box-shadow: 0 0 0 0 oklch(0.72 0.2 30 / 55%);
+  }
+}
+
+@utility listen-flicker {
+  animation: listen-pop 1.6s steps(1, end) infinite;
+  border-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .listen-flicker {
+    animation: none;
+    background-color: oklch(0.78 0.17 165);
+    color: oklch(0.17 0.03 165);
+  }
+}
+
