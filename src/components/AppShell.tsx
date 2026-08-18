@@ -69,7 +69,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
   return (
     <div className="min-h-screen lg:grid lg:grid-cols-[17rem_1fr]">
-      <aside className="hidden border-r border-sidebar-border bg-sidebar lg:sticky lg:top-0 lg:flex lg:h-screen lg:flex-col">
+      <aside className="hidden border-r border-sidebar-border bg-sidebar/70 backdrop-blur-xl lg:sticky lg:top-0 lg:flex lg:h-screen lg:flex-col">
         <Brand />
         <div className="flex-1 overflow-y-auto">
           <NavList />
@@ -100,7 +100,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               className="absolute inset-0 bg-foreground/40"
               onClick={() => setOpen(false)}
             />
-            <div className="absolute inset-y-0 left-0 flex w-72 flex-col bg-sidebar shadow-xl">
+            <div className="absolute inset-y-0 left-0 flex w-72 flex-col bg-sidebar/90 backdrop-blur-xl shadow-xl">
               <div className="flex items-center justify-between">
                 <Brand />
                 <Button
