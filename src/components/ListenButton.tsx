@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { Loader2, Pause, Volume2 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
 
 export function ListenButton({ text, label = "Listen" }: { text: string; label?: string }) {
   const audioRef = useRef<HTMLAudioElement | null>(null);

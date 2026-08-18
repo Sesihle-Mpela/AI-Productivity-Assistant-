@@ -3,8 +3,10 @@ import { Bot, CalendarClock, Mail, NotebookPen, Search, ShieldCheck } from "luci
 import { AppShell } from "@/components/AppShell";
 import { ListenButton } from "@/components/ListenButton";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-brainstorm.jpg";
+import heroImage from "@/assets/robot-human.jpg";
 import collabImage from "@/assets/team-collab.jpg";
+import forestImage from "@/assets/winter-forest.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
