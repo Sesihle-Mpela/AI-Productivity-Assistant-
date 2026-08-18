@@ -125,7 +125,7 @@
   }
 
   body {
-    background-color: var(--color-background);
+    background-color: color-mix(in oklab, var(--color-background) 35%, transparent);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     position: relative;
@@ -144,11 +144,11 @@
 
   body::before {
     background-image:
-      radial-gradient(28rem 28rem at 12% 18%, oklch(0.72 0.2 190 / 45%), transparent 70%),
-      radial-gradient(24rem 24rem at 82% 12%, oklch(0.7 0.22 320 / 42%), transparent 70%),
-      radial-gradient(30rem 30rem at 72% 78%, oklch(0.78 0.2 145 / 40%), transparent 70%),
-      radial-gradient(22rem 22rem at 24% 84%, oklch(0.82 0.19 85 / 42%), transparent 70%),
-      radial-gradient(26rem 26rem at 50% 50%, oklch(0.68 0.21 265 / 34%), transparent 72%);
+      radial-gradient(28rem 28rem at 12% 18%, oklch(0.72 0.2 190 / 85%), transparent 70%),
+      radial-gradient(24rem 24rem at 82% 12%, oklch(0.7 0.22 320 / 80%), transparent 70%),
+      radial-gradient(30rem 30rem at 72% 78%, oklch(0.78 0.2 145 / 80%), transparent 70%),
+      radial-gradient(22rem 22rem at 24% 84%, oklch(0.82 0.19 85 / 82%), transparent 70%),
+      radial-gradient(26rem 26rem at 50% 50%, oklch(0.68 0.21 265 / 70%), transparent 72%);
     filter: saturate(1.15) blur(2px);
     animation: quantum-symphony 26s ease-in-out infinite alternate;
   }
@@ -157,14 +157,14 @@
     z-index: -1;
     background-image:
       radial-gradient(circle, oklch(1 0 0 / 55%) 0 1px, transparent 1.6px),
-      radial-gradient(circle, oklch(0.72 0.2 190 / 45%) 0 1px, transparent 1.8px);
+      radial-gradient(circle, oklch(0.72 0.2 190 / 85%) 0 1px, transparent 1.8px);
     background-size:
       18px 18px,
       31px 31px;
     background-position:
       0 0,
       7px 11px;
-    opacity: 0.5;
+    opacity: 0.75;
     animation: quantum-dots 18s linear infinite;
   }
 
