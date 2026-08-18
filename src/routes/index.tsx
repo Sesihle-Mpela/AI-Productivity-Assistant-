@@ -3,8 +3,10 @@ import { Bot, CalendarClock, Mail, NotebookPen, Search, ShieldCheck } from "luci
 import { AppShell } from "@/components/AppShell";
 import { ListenButton } from "@/components/ListenButton";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-brainstorm.jpg";
+import heroImage from "@/assets/robot-human.jpg";
 import collabImage from "@/assets/team-collab.jpg";
+import forestImage from "@/assets/winter-forest.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -70,8 +72,18 @@ const WELCOME =
 function Dashboard() {
   return (
     <AppShell>
-      <section className="overflow-hidden rounded-3xl border border-border bg-[image:var(--gradient-soft)]">
-        <div className="grid items-center gap-6 p-6 sm:p-10 lg:grid-cols-2">
+      <section className="relative overflow-hidden rounded-3xl border border-border">
+        <img
+          src={forestImage}
+          alt=""
+          aria-hidden="true"
+          width={1536}
+          height={1024}
+          className="absolute inset-0 size-full object-cover"
+        />
+        <div className="absolute inset-0 bg-background/80" />
+        <div className="absolute inset-0 bg-[image:var(--gradient-soft)]" />
+        <div className="relative grid items-center gap-6 p-6 sm:p-10 lg:grid-cols-2">
           <div>
             <p className="font-display text-3xl leading-tight sm:text-5xl">
               <span className="text-gradient">HELLO BEGINNER!!</span>
@@ -95,13 +107,14 @@ function Dashboard() {
           </div>
           <img
             src={heroImage}
-            alt="Professionals holding laptops while brainstorming ideas together in a bright office"
-            width={1536}
-            height={1024}
+            alt="Half-human, half-robot AI assistant holding an open laptop in a snowy winter forest"
+            width={1280}
+            height={960}
             className="h-56 w-full rounded-2xl object-cover shadow-[var(--shadow-card)] sm:h-72 lg:h-80"
           />
         </div>
       </section>
+
 
       <section className="mt-8" aria-label="AI tools">
         <h2 className="font-display text-xl sm:text-2xl">Your AI toolkit</h2>

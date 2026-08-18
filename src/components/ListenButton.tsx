@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { Loader2, Pause, Volume2 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
 
 export function ListenButton({ text, label = "Listen" }: { text: string; label?: string }) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -55,6 +57,10 @@ export function ListenButton({ text, label = "Listen" }: { text: string; label?:
       size="sm"
       onClick={play}
       disabled={loading || !text.trim()}
+      className={cn(
+        "font-semibold",
+        text.trim() && !loading && "listen-flicker hover:brightness-105",
+      )}
       aria-label={playing ? "Stop reading aloud" : `${label} — read this text aloud`}
     >
       {loading ? (
@@ -68,3 +74,4 @@ export function ListenButton({ text, label = "Listen" }: { text: string; label?:
     </Button>
   );
 }
+
