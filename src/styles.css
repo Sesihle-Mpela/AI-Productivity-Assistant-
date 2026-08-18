@@ -125,7 +125,7 @@
   }
 
   body {
-    background-color: color-mix(in oklab, var(--color-background) 35%, transparent);
+    background-color: transparent;
     color: var(--color-foreground);
     font-family: var(--font-sans);
     position: relative;
@@ -134,6 +134,27 @@
 
   /* Nanoscale chromatics: quantum-dot colour symphony backdrop */
   body::before,
+  body::after {
+    content: "";
+    position: fixed;
+    inset: -20%;
+    z-index: -2;
+    pointer-events: none;
+  }
+
+  body::before {
+    inset: -10%;
+    background-color: oklch(0.35 0.12 265);
+    background-image:
+      radial-gradient(60rem 60rem at 10% 15%, oklch(0.75 0.24 195 / 95%), transparent 65%),
+      radial-gradient(55rem 55rem at 88% 8%, oklch(0.68 0.28 330 / 92%), transparent 65%),
+      radial-gradient(65rem 65rem at 78% 82%, oklch(0.8 0.24 150 / 90%), transparent 65%),
+      radial-gradient(50rem 50rem at 18% 88%, oklch(0.85 0.2 90 / 92%), transparent 65%),
+      radial-gradient(45rem 45rem at 50% 50%, oklch(0.62 0.26 275 / 85%), transparent 70%);
+    filter: saturate(1.25) blur(30px);
+    animation: quantum-symphony 26s ease-in-out infinite alternate;
+  }
+
   body::after {
     content: "";
     position: fixed;
@@ -164,7 +185,7 @@
     background-position:
       0 0,
       7px 11px;
-    opacity: 0.75;
+    opacity: 0.65;
     animation: quantum-dots 18s linear infinite;
   }
 
