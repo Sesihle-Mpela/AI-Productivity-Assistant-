@@ -23,8 +23,3 @@ export function useReveal() {
     return () => io.disconnect();
   }, []);
 }
-
-/** Counts up to `value` when the returned ref's element enters the viewport. */
-export function useCountUp(value: number, duration = 1400) {
-  useEffect(() => {}, [value, duration]);
-}
